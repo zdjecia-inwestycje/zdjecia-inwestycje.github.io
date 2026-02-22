@@ -9,95 +9,112 @@
     <style>
         body { background-color: #0f172a; color: #f8fafc; }
         .gradient-text { background: linear-gradient(90deg, #a855f7, #22c55e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .phone-shadow { box-shadow: 0 0 50px -12px rgba(168, 85, 247, 0.4); }
+        .phone-shadow { box-shadow: 0 0 60px -15px rgba(168, 85, 247, 0.5); }
         .mobile-menu { display: none; }
         .mobile-menu.active { display: block; }
+        /* Animacja płynnej zmiany obrazu */
+        #phone-display { transition: transform 0.3s ease, opacity 0.3s ease; }
     </style>
 </head>
 <body class="font-sans">
 
-    <nav class="fixed w-full z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+    <nav class="fixed w-full z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-3 text-xl font-bold">
-                <img src="img/logo.png" alt="Logo" class="h-10 w-auto onerror="this.style.display='none'"> 
-                <span class="italic">Zdjęcia <span class="text-green-500">Inwestycje</span></span>
+            <div class="flex items-center gap-3">
+                <img src="./img/logo.png" alt="Logo" class="h-12 w-auto object-contain" onerror="this.parentElement.innerHTML='<span class=\'text-2xl font-bold italic text-purple-500\'>Zdjęcia <span class=\'text-green-500\'>Inwestycje</span></span>'"> 
             </div>
             
             <div class="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest font-semibold">
                 <a href="#demo" class="hover:text-purple-400 transition">Interaktywne Demo</a>
-                <a href="#funkcje" class="hover:text-purple-400 transition">Funkcje</a>
-                <a href="#" class="bg-purple-600 px-4 py-2 rounded-lg hover:bg-purple-700 transition text-white">Instrukcja PDF</a>
+                <a href="#funkcje" class="hover:text-purple-400 transition">O Systemie</a>
+                <a href="#" class="bg-purple-600 px-6 py-2 rounded-full hover:bg-purple-700 transition text-white shadow-lg">Instrukcja PDF</a>
             </div>
 
-            <button class="md:hidden text-2xl" onclick="toggleMenu()">
+            <button class="md:hidden text-2xl text-slate-300" onclick="toggleMenu()">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
 
-        <div id="mobileMenu" class="mobile-menu md:hidden bg-slate-900 border-b border-slate-800 p-4 space-y-4 text-center font-semibold">
-            <a href="#demo" onclick="toggleMenu()" class="block py-2 border-b border-slate-800">Interaktywne Demo</a>
-            <a href="#funkcje" onclick="toggleMenu()" class="block py-2 border-b border-slate-800">Funkcje</a>
-            <a href="#" onclick="toggleMenu()" class="block py-2 text-purple-400">Pobierz Instrukcję</a>
+        <div id="mobileMenu" class="mobile-menu md:hidden bg-slate-900 border-b border-slate-800 p-6 space-y-4 text-center font-semibold">
+            <a href="#demo" onclick="toggleMenu()" class="block py-3 border-b border-slate-800 text-lg">Interaktywne Demo</a>
+            <a href="#funkcje" onclick="toggleMenu()" class="block py-3 border-b border-slate-800 text-lg">O Systemie</a>
+            <a href="#" onclick="toggleMenu()" class="block py-3 text-purple-400 text-xl">Instrukcja PDF</a>
         </div>
     </nav>
 
-    <section class="pt-32 pb-16 px-4">
-        <div class="max-w-7xl mx-auto text-center">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-6">
-                Dokumentacja, która <br><span class="gradient-text">robi się sama</span>
+    <section class="pt-40 pb-20 px-4 text-center">
+        <div class="max-w-5xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight">
+                Dokumentacja, która <br><span class="gradient-text text-6xl md:text-8xl">robi się sama.</span>
             </h1>
-            <p class="text-slate-400 text-lg max-w-2xl mx-auto mb-8">
-                Zarządzaj projektami światłowodowymi, mufami i słupami bezpośrednio z terenu.
+            <p class="text-slate-400 text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
+                Specjalistyczne narzędzie dla branży FTTH. Łączy zdjęcia z GPS, ewidencję materiałów i automatyczne raportowanie.
             </p>
         </div>
     </section>
 
-    <section id="demo" class="py-12 bg-slate-900/50">
+    <section id="demo" class="py-20 bg-slate-900/50">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="grid md:grid-cols-2 gap-12 items-start">
+            <h2 class="text-3xl font-bold mb-16 text-center text-slate-200">Prezentacja Funkcji Systemu</h2>
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
                 
-                <div class="space-y-3 order-2 md:order-1">
-                    <button onclick="changeScreen('glowny')" id="btn-glowny" class="w-full text-left p-4 rounded-xl border border-slate-700 bg-slate-800 hover:border-purple-500 transition-all ring-2 ring-purple-500">
-                        <div class="flex items-center gap-4">
-                            <i class="fas fa-mobile-screen text-purple-500"></i>
-                            <div><h3 class="font-bold">1. Główny Ekran</h3><p class="text-xs text-slate-400">Podgląd wszystkich aktywnych inwestycji.</p></div>
+                <div class="space-y-4 order-2 lg:order-1">
+                    <button onclick="changeScreen('glowny')" id="btn-glowny" class="w-full text-left p-5 rounded-2xl border border-slate-700 bg-slate-800 hover:border-purple-500 transition-all ring-2 ring-purple-500">
+                        <div class="flex items-center gap-5">
+                            <i class="fas fa-layer-group text-purple-500 text-2xl"></i>
+                            <div>
+                                <h3 class="font-bold text-xl uppercase tracking-wide">1. Panel Główny</h3>
+                                <p class="text-sm text-slate-400 mt-1 leading-relaxed">Zarządzaj statusem inwestycji: Wszystko, Gotowe, Rozpoczęte, Rozliczone. Wyszukiwarka pozwala znaleźć projekt w sekundę po nazwie lub numerze ewidencyjnym.</p>
+                            </div>
                         </div>
                     </button>
 
-                    <button onclick="changeScreen('dodaj')" id="btn-dodaj" class="w-full text-left p-4 rounded-xl border border-slate-700 bg-slate-800 hover:border-green-500 transition-all">
-                        <div class="flex items-center gap-4">
-                            <i class="fas fa-plus-circle text-green-500"></i>
-                            <div><h3 class="font-bold">2. Dodaj Nowy Projekt</h3><p class="text-xs text-slate-400">Szybkie tworzenie nowej bazy danych projektu.</p></div>
+                    <button onclick="changeScreen('dodaj')" id="btn-dodaj" class="w-full text-left p-5 rounded-2xl border border-slate-700 bg-slate-800 hover:border-green-500 transition-all">
+                        <div class="flex items-center gap-5">
+                            <i class="fas fa-folder-plus text-green-500 text-2xl"></i>
+                            <div>
+                                <h3 class="font-bold text-xl uppercase tracking-wide">2. Nowy Projekt</h3>
+                                <p class="text-sm text-slate-400 mt-1 leading-relaxed">Automatyzacja struktur. Zdefiniuj schemat raz (np. Projekt, Mufy, Studnie), a aplikacja stworzy go automatycznie przy każdej nowej inwestycji.</p>
+                            </div>
                         </div>
                     </button>
 
-                    <button onclick="changeScreen('otwarty')" id="btn-otwarty" class="w-full text-left p-4 rounded-xl border border-slate-700 bg-slate-800 hover:border-blue-500 transition-all">
-                        <div class="flex items-center gap-4">
-                            <i class="fas fa-folder-open text-blue-500"></i>
-                            <div><h3 class="font-bold">3. Otwarty Projekt</h3><p class="text-xs text-slate-400">Pełna struktura folderów i plików projektu.</p></div>
+                    <button onclick="changeScreen('otwarty')" id="btn-otwarty" class="w-full text-left p-5 rounded-2xl border border-slate-700 bg-slate-800 hover:border-blue-500 transition-all">
+                        <div class="flex items-center gap-5">
+                            <i class="fas fa-map-marked-alt text-blue-500 text-2xl"></i>
+                            <div>
+                                <h3 class="font-bold text-xl uppercase tracking-wide">3. Otwarty Projekt</h3>
+                                <p class="text-sm text-slate-400 mt-1 leading-relaxed">Błyskawiczny dostęp do mapy, pomiarów i projektów PDF. Folder "Projekt" zawsze wyróżniony na szaro dla łatwiejszego wyszukiwania w terenie.</p>
+                            </div>
                         </div>
                     </button>
 
-                    <button onclick="changeScreen('slupy')" id="btn-slupy" class="w-full text-left p-4 rounded-xl border border-slate-700 bg-slate-800 hover:border-yellow-500 transition-all">
-                        <div class="flex items-center gap-4">
-                            <i class="fas fa-tower-broadcast text-yellow-500"></i>
-                            <div><h3 class="font-bold">4. Folder Słupy - Dodaj zdjęcie</h3><p class="text-xs text-slate-400">Geotagowana dokumentacja konkretnych elementów.</p></div>
+                    <button onclick="changeScreen('slupy')" id="btn-slupy" class="w-full text-left p-5 rounded-2xl border border-slate-700 bg-slate-800 hover:border-yellow-500 transition-all">
+                        <div class="flex items-center gap-5">
+                            <i class="fas fa-camera text-yellow-500 text-2xl"></i>
+                            <div>
+                                <h3 class="font-bold text-xl uppercase tracking-wide">4. Dokumentacja Terenowa</h3>
+                                <p class="text-sm text-slate-400 mt-1 leading-relaxed">Wybierz np. folder "Słupy" i konkretny numer. Zdjęcie zostanie automatycznie opisane datą, nazwą projektu oraz współrzędnymi GPS w metadanych.</p>
+                            </div>
                         </div>
                     </button>
 
-                    <button onclick="changeScreen('magazyn')" id="btn-magazyn" class="w-full text-left p-4 rounded-xl border border-slate-700 bg-slate-800 hover:border-red-500 transition-all">
-                        <div class="flex items-center gap-4">
-                            <i class="fas fa-box text-red-500"></i>
-                            <div><h3 class="font-bold">5. Magazyn i Materiały</h3><p class="text-xs text-slate-400">Rozliczanie kabli i osprzętu w CSV.</p></div>
+                    <button onclick="changeScreen('magazyn')" id="btn-magazyn" class="w-full text-left p-5 rounded-2xl border border-slate-700 bg-slate-800 hover:border-red-500 transition-all">
+                        <div class="flex items-center gap-5">
+                            <i class="fas fa-file-csv text-red-500 text-2xl"></i>
+                            <div>
+                                <h3 class="font-bold text-xl uppercase tracking-wide">5. Magazyn i CSV</h3>
+                                <p class="text-sm text-slate-400 mt-1 leading-relaxed">Kontroluj zużycie kabli (DAC, ADSS) oraz osprzętu. Rozliczaj pobrane materiały i eksportuj gotowe zestawienia do plików CSV jednym kliknięciem.</p>
+                            </div>
                         </div>
                     </button>
                 </div>
 
-                <div class="flex justify-center order-1 md:order-2 sticky top-24">
-                    <div class="w-[280px] h-[560px] bg-slate-800 rounded-[2.5rem] border-[6px] border-slate-700 relative overflow-hidden phone-shadow">
-                        <img id="phone-display" src="img/1000091575.jpg" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 bg-black/90 p-4 text-[10px] text-center w-full border-t border-slate-700" id="screen-desc">
-                            Ekran Główny: Zarządzaj wszystkimi projektami w jednym miejscu.
+                <div class="flex justify-center order-1 lg:order-2 sticky top-28">
+                    <div class="w-[340px] h-[680px] bg-slate-800 rounded-[3.5rem] border-[10px] border-slate-700 relative overflow-hidden phone-shadow">
+                        <img id="phone-display" src="./img/1000091575.jpg" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 bg-black/85 backdrop-blur-md p-6 text-xs text-center w-full border-t border-slate-700 leading-relaxed" id="screen-desc">
+                            Zarządzaj wszystkimi projektami w jednym miejscu. Statusy kolorystyczne pozwalają błyskawicznie ocenić postęp prac na wielu budowach jednocześnie.
                         </div>
                     </div>
                 </div>
@@ -106,30 +123,59 @@
         </div>
     </section>
 
-    <footer class="py-8 text-center text-slate-600 text-sm">
-        <p>&copy; 2024 Zdjęcia Inwestycje</p>
+    <section id="funkcje" class="py-20 max-w-7xl mx-auto px-4">
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="p-8 rounded-3xl bg-slate-800/50 border border-slate-700">
+                <i class="fas fa-users-cog text-3xl text-purple-500 mb-6"></i>
+                <h4 class="text-xl font-bold mb-4">Praca Grupowa</h4>
+                <p class="text-slate-400 text-sm">Wiele ekip synchronizuje zdjęcia do jednego projektu na Google Drive bez duplikatów. System inteligentnie scala dane z telefonów A, B i C.</p>
+            </div>
+            <div class="p-8 rounded-3xl bg-slate-800/50 border border-slate-700">
+                <i class="fas fa-wifi-slash text-3xl text-green-500 mb-6"></i>
+                <h4 class="text-xl font-bold mb-4">Pełny Tryb Offline</h4>
+                <p class="text-slate-400 text-sm">Pracuj bez zasięgu głęboko w terenie. Aplikacja zapisuje wszystko lokalnie, a synchronizację wykonasz po powrocie do bazy.</p>
+            </div>
+            <div class="p-8 rounded-3xl bg-slate-800/50 border border-slate-700">
+                <i class="fas fa-file-invoice-dollar text-3xl text-blue-500 mb-6"></i>
+                <h4 class="text-xl font-bold mb-4">Rozliczenia w 5 sekund</h4>
+                <p class="text-slate-400 text-sm">Inwestor otrzymuje zdjęcia z GPS i datą. Koniec z poprawkami dokumentacji i problemami z uznaniem zużycia materiałów.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center text-slate-600 border-t border-slate-800">
+        <p class="font-bold text-slate-400 mb-2">Zdjęcia Inwestycje - 2024</p>
+        <p class="text-xs">Dedykowane rozwiązanie dla budowniczych sieci światłowodowych.</p>
     </footer>
 
     <script>
         const screens = {
-            glowny: { img: 'img/1000091575.jpg', color: 'purple', desc: 'Ekran Główny: Zarządzaj wszystkimi projektami w jednym miejscu.' },
-            dodaj: { img: 'img/1000091576.jpg', color: 'green', desc: 'Dodaj Projekt: Wprowadź nazwę i zdefiniuj automatyczne foldery.' },
-            otwarty: { img: 'img/1000091574.jpg', color: 'blue', desc: 'Otwarty Projekt: Szybki dostęp do mapy, muf i pomiarów.' },
-            slupy: { img: 'img/1000091573.jpg', color: 'yellow', desc: 'Dokumentacja Słupów: Wybierz numer słupa i dodaj opisane zdjęcie.' },
-            magazyn: { img: 'img/1000091580.jpg', color: 'red', desc: 'Magazyn: Kontroluj zużycie kabli w czasie rzeczywistym.' }
+            glowny: { img: './img/1000091575.jpg', color: 'purple', desc: 'PANEL GŁÓWNY: Zarządzaj wszystkimi projektami w jednym miejscu. Statusy kolorystyczne pozwalają błyskawicznie ocenić postęp prac na wielu budowach jednocześnie.' },
+            dodaj: { img: './img/1000091576.jpg', color: 'green', desc: 'DODAWANIE PROJEKTU: Szybka konfiguracja. Raz zdefiniowana sekwencja folderów (np. OSD, OPP, ZS) zostanie automatycznie utworzona przy każdym nowym zadaniu.' },
+            otwarty: { img: './img/1000091574.jpg', color: 'blue', desc: 'OTWARTY PROJEKT: Centrum dowodzenia w terenie. Podgląd mapy, szybki dostęp do folderu "Projekt" z dokumentacją PDF oraz pełna kontrola nad pomiarami.' },
+            slupy: { img: './img/1000091573.jpg', color: 'yellow', desc: 'DODAWANIE ZDJĘCIA: Wybierz konkretny element (np. nr słupa). Każde wykonane zdjęcie zostaje natychmiastowo otagowane lokalizacją GPS i zapisaną datą.' },
+            magazyn: { img: './img/1000091580.jpg', color: 'red', desc: 'MAGAZYN: Inteligentna kontrola materiałów. Wklejaj listy kabli z plików zewnętrznych i generuj raporty CSV gotowe do wysłania do biura.' }
         };
 
         function changeScreen(key) {
             const display = document.getElementById('phone-display');
             const desc = document.getElementById('screen-desc');
             
-            display.src = screens[key].img;
-            desc.innerText = screens[key].desc;
+            // Animacja
+            display.style.opacity = '0';
+            display.style.transform = 'scale(0.95)';
             
-            document.querySelectorAll('button').forEach(btn => {
-                btn.classList.remove('ring-2', 'ring-purple-500', 'ring-green-500', 'ring-blue-500', 'ring-yellow-500', 'ring-red-500');
-            });
-            document.getElementById('btn-' + key).classList.add('ring-2', 'ring-' + screens[key].color + '-500');
+            setTimeout(() => {
+                display.src = screens[key].img;
+                desc.innerText = screens[key].desc;
+                display.style.opacity = '1';
+                display.style.transform = 'scale(1)';
+                
+                document.querySelectorAll('button').forEach(btn => {
+                    btn.classList.remove('ring-2', 'ring-purple-500', 'ring-green-500', 'ring-blue-500', 'ring-yellow-500', 'ring-red-500');
+                });
+                document.getElementById('btn-' + key).classList.add('ring-2', 'ring-' + screens[key].color + '-500');
+            }, 250);
         }
 
         function toggleMenu() {
