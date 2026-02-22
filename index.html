@@ -13,7 +13,7 @@
         .mobile-menu { display: none; }
         .mobile-menu.active { display: block; }
         #phone-display { object-fit: contain; background-color: #0f172a; transition: all 0.3s ease; }
-        .feature-card { background: rgba(30, 41, 59, 0.5); border: 1px border rgba(51, 65, 85, 1); transition: all 0.3s ease; }
+        .feature-card { background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(51, 65, 85, 1); transition: all 0.3s ease; }
         .feature-card:hover { border-color: #a855f7; transform: translateY(-5px); }
     </style>
 </head>
@@ -62,50 +62,40 @@
                 <div class="space-y-4 order-2 lg:order-1">
                     <button onclick="changeScreen('glowny')" id="btn-glowny" class="w-full text-left p-5 rounded-2xl border border-slate-700 bg-slate-800 hover:border-purple-500 transition-all ring-2 ring-purple-500">
                         <div class="flex items-center gap-5">
-                            <i class="fas fa-th-list text-purple-500 text-2xl"></i>
+                            <i class="fas fa-1 text-purple-500 text-2xl font-black"></i>
                             <div>
-                                <h3 class="font-bold text-lg uppercase">Panel Główny</h3>
-                                <p class="text-xs text-slate-400">Zarządzanie statusami i filtrowanie inwestycji.</p>
+                                <h3 class="font-bold text-lg uppercase">Wybierz Inwestycję</h3>
+                                <p class="text-xs text-slate-400">Otwórz panel i znajdź swój projekt na liście.</p>
                             </div>
                         </div>
                     </button>
 
                     <button onclick="changeScreen('dodaj')" id="btn-dodaj" class="w-full text-left p-5 rounded-2xl border border-slate-700 bg-slate-800 hover:border-green-500 transition-all">
                         <div class="flex items-center gap-5">
-                            <i class="fas fa-folder-plus text-green-500 text-2xl"></i>
+                            <i class="fas fa-2 text-green-500 text-2xl font-black"></i>
                             <div>
-                                <h3 class="font-bold text-lg uppercase">Struktura Folderów</h3>
-                                <p class="text-xs text-slate-400">Automatyczna sekwencja: Projekt, Mufy, Słupy.</p>
-                            </div>
-                        </div>
-                    </button>
-
-                    <button onclick="changeScreen('magazyn')" id="btn-magazyn" class="w-full text-left p-5 rounded-2xl border border-slate-700 bg-slate-800 hover:border-red-500 transition-all">
-                        <div class="flex items-center gap-5">
-                            <i class="fas fa-boxes-stacked text-red-500 text-2xl"></i>
-                            <div>
-                                <h3 class="font-bold text-lg uppercase">Inteligentny Magazyn</h3>
-                                <p class="text-xs text-slate-400">Rozliczanie materiałów i eksport plików CSV.</p>
+                                <h3 class="font-bold text-lg uppercase">Utwórz Strukturę</h3>
+                                <p class="text-xs text-slate-400">System sam wygeneruje foldery: Mufy, Słupy, Pomiary.</p>
                             </div>
                         </div>
                     </button>
 
                     <button onclick="changeScreen('slupy')" id="btn-slupy" class="w-full text-left p-5 rounded-2xl border border-slate-700 bg-slate-800 hover:border-yellow-500 transition-all">
                         <div class="flex items-center gap-5">
-                            <i class="fas fa-camera text-yellow-500 text-2xl"></i>
+                            <i class="fas fa-3 text-yellow-500 text-2xl font-black"></i>
                             <div>
-                                <h3 class="font-bold text-lg uppercase">Praca w Terenie</h3>
-                                <p class="text-xs text-slate-400">Tagowanie GPS i natychmiastowe opisywanie zdjęć.</p>
+                                <h3 class="font-bold text-lg uppercase">Zrób Zdjęcie</h3>
+                                <p class="text-xs text-slate-400">Wybierz numer elementu i cyknij fotkę. GPS doda się sam.</p>
                             </div>
                         </div>
                     </button>
 
-                    <button onclick="changeScreen('gotowe')" id="btn-gotowe" class="w-full text-left p-5 rounded-2xl border border-slate-700 bg-slate-900 hover:border-blue-500 transition-all shadow-xl">
+                    <button onclick="changeScreen('gotowe')" id="btn-gotowe" class="w-full text-left p-6 rounded-2xl border-2 border-blue-500 bg-slate-900 hover:scale-[1.02] transition-all shadow-xl shadow-blue-500/10">
                         <div class="flex items-center gap-5">
-                            <i class="fas fa-check-double text-blue-500 text-2xl"></i>
+                            <i class="fas fa-check-circle text-blue-500 text-3xl"></i>
                             <div>
-                                <h3 class="font-bold text-lg uppercase">Efekt Końcowy</h3>
-                                <p class="text-xs text-blue-400 font-bold tracking-widest uppercase">Zdjęcie opisane i wysłane do chmury.</p>
+                                <h3 class="font-bold text-xl uppercase text-white">Gotowe!</h3>
+                                <p class="text-sm text-blue-400 font-bold tracking-widest uppercase">Zdjęcie jest już opisane i w chmurze.</p>
                             </div>
                         </div>
                     </button>
@@ -117,7 +107,7 @@
                     </div>
                     <div class="mt-6 p-4 bg-slate-800/80 rounded-xl border border-slate-700 w-full max-w-[320px] text-center">
                         <p id="screen-desc" class="text-sm font-medium leading-relaxed">
-                            PANEL GŁÓWNY: Aplikacja porządkuje inwestycje według statusów, co pozwala na błyskawiczne zarządzanie budowami.
+                            PANEL GŁÓWNY: Błyskawiczne zarządzanie budowami dzięki czytelnym statusom i wyszukiwarce.
                         </p>
                     </div>
                 </div>
@@ -131,61 +121,61 @@
             <div class="h-1 w-24 bg-purple-500 mx-auto"></div>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8">
+        <div class="grid md:grid-cols-2 gap-8 text-left">
             <div class="feature-card p-8 rounded-3xl">
-                <h4 class="text-purple-400 font-bold uppercase mb-3 tracking-tighter text-xl">1. Wprowadzenie</h4>
-                <p class="text-slate-300 text-sm leading-relaxed">Specjalistyczne narzędzie zaprojektowane dla ekip monterskich i inżynierów. System eliminuje chaos w galerii telefonu, automatyzuje opisywanie zdjęć i integruje dokumentację z ewidencją materiałową.</p>
+                <h4 class="text-purple-400 font-bold uppercase mb-3 text-xl tracking-tighter">1. Wprowadzenie</h4>
+                <p class="text-slate-300 text-sm leading-relaxed">Zdjęcia Inwestycje to specjalistyczne narzędzie zaprojektowane dla ekip monterskich i inżynierów. System eliminuje chaos w galerii telefonu, automatyzuje opisywanie zdjęć i integruje dokumentację z ewidencją materiałową.</p>
             </div>
 
             <div class="feature-card p-8 rounded-3xl">
-                <h4 class="text-red-400 font-bold uppercase mb-3 tracking-tighter text-xl">2. Inteligentny Magazyn</h4>
+                <h4 class="text-red-400 font-bold uppercase mb-3 text-xl tracking-tighter">2. Inteligentny Magazyn</h4>
                 <p class="text-slate-300 text-sm leading-relaxed italic mb-4">Precyzyjne śledzenie obiegu materiałów:</p>
                 <ul class="text-xs space-y-2 text-slate-400">
-                    <li><b class="text-slate-200">Pobrane vs Zużyte:</b> Błyskawiczne wykrywanie braków.</li>
-                    <li><b class="text-slate-200">Bulk Import:</b> Masowe wklejanie list materiałów.</li>
-                    <li><b class="text-slate-200">Eksport CSV:</b> Gotowe zestawienia do faktur.</li>
+                    <li><b class="text-slate-200 uppercase">Pobrane vs Zużyte:</b> Błyskawiczne wykrywanie braków.</li>
+                    <li><b class="text-slate-200 uppercase">Bulk Import:</b> Wklejanie list materiałów z plików zewnętrznych.</li>
+                    <li><b class="text-slate-200 uppercase">Eksport CSV:</b> Gotowe zestawienie do faktury jednym kliknięciem.</li>
                 </ul>
             </div>
 
             <div class="feature-card p-8 rounded-3xl">
-                <h4 class="text-green-400 font-bold uppercase mb-3 tracking-tighter text-xl">3. Struktura Auto-Folder</h4>
+                <h4 class="text-green-400 font-bold uppercase mb-3 text-xl tracking-tighter">3. Struktura Auto-Folder</h4>
                 <p class="text-slate-300 text-sm leading-relaxed italic mb-4">Zdefiniuj schemat raz, aplikacja powieli go dla każdego projektu:</p>
                 <ul class="text-xs space-y-2 text-slate-400">
-                    <li><b class="text-slate-200">Automatyczna sekwencja:</b> Pomiary, Mufy, Studnie, Słupy.</li>
-                    <li><b class="text-slate-200">Tagowanie GPS:</b> Gwarancja rzetelności przed Inwestorem.</li>
-                    <li><b class="text-slate-200">Folder Projekt:</b> Szybki dostęp do planów PDF (zawsze na szaro).</li>
+                    <li><b class="text-slate-200 uppercase">Automatyczna sekwencja:</b> Foldery Projekt, Pomiary, Mufy, Słupy.</li>
+                    <li><b class="text-slate-200 uppercase">Tagowanie GPS:</b> Lokalizacja w metadanych gwarantuje rzetelność.</li>
+                    <li><b class="text-slate-200 uppercase">Folder Projekt:</b> Wyróżniony na szaro dla szybkiego dostępu do PDF.</li>
                 </ul>
             </div>
 
             <div class="feature-card p-8 rounded-3xl">
-                <h4 class="text-blue-400 font-bold uppercase mb-3 tracking-tighter text-xl">4. Praca Grupowa i Sync</h4>
-                <p class="text-slate-300 text-sm leading-relaxed italic mb-4">Współpraca całego zespołu w czasie rzeczywistym:</p>
+                <h4 class="text-blue-400 font-bold uppercase mb-3 text-xl tracking-tighter">4. Praca Grupowa i Sync</h4>
+                <p class="text-slate-300 text-sm leading-relaxed italic mb-4">Płynna współpraca całego zespołu w czasie rzeczywistym:</p>
                 <ul class="text-xs space-y-2 text-slate-400">
-                    <li><b class="text-slate-200">Wspólny projekt:</b> Kilka ekip na jednym zadaniu.</li>
-                    <li><b class="text-slate-200">Brak duplikatów:</b> Inteligentne łączenie plików na Dysku Google.</li>
-                    <li><b class="text-slate-200">Podgląd Online:</b> Pliki widoczne natychmiast w aplikacji.</li>
+                    <li><b class="text-slate-200 uppercase">Wspólny projekt:</b> Kilka ekip może pracować nad tym samym zadaniem.</li>
+                    <li><b class="text-slate-200 uppercase">Brak duplikatów:</b> Inteligentne scalanie zdjęć na Dysku Google.</li>
+                    <li><b class="text-slate-200 uppercase">Podgląd Online:</b> Pliki z chmury widoczne bezpośrednio w aplikacji.</li>
                 </ul>
             </div>
         </div>
 
         <div class="mt-16 bg-slate-800/80 p-10 rounded-[3rem] border border-slate-700 shadow-2xl">
-            <h3 class="text-2xl font-bold mb-8 text-center uppercase">Podsumowanie korzyści</h3>
-            <div class="grid md:grid-cols-2 gap-6">
+            <h3 class="text-2xl font-bold mb-8 text-center uppercase tracking-widest">Podsumowanie korzyści</h3>
+            <div class="grid md:grid-cols-2 gap-8">
                 <div class="flex items-start gap-4">
-                    <i class="fas fa-clock text-green-500 mt-1"></i>
-                    <div><b class="block uppercase text-xs text-slate-200">Oszczędność czasu (do 40%)</b><p class="text-xs text-slate-400">Brak konieczności ręcznej segregacji po powrocie do biura.</p></div>
+                    <i class="fas fa-clock text-green-500 text-xl mt-1"></i>
+                    <div><b class="block uppercase text-xs text-slate-200 mb-1">Oszczędność czasu (do 40%)</b><p class="text-xs text-slate-400">Brak konieczności ręcznej segregacji zdjęć po powrocie do biura.</p></div>
                 </div>
                 <div class="flex items-start gap-4">
-                    <i class="fas fa-images text-green-500 mt-1"></i>
-                    <div><b class="block uppercase text-xs text-slate-200">Czysta Galeria</b><p class="text-xs text-slate-400">Zdjęcia inwestycji nie mieszają się z prywatnymi fotkami.</p></div>
+                    <i class="fas fa-images text-green-500 text-xl mt-1"></i>
+                    <div><b class="block uppercase text-xs text-slate-200 mb-1">Czysta Galeria</b><p class="text-xs text-slate-400">Zdjęcia inwestycji nie mieszają się z Twoimi prywatnymi fotkami.</p></div>
                 </div>
                 <div class="flex items-start gap-4">
-                    <i class="fas fa-exclamation-triangle text-green-500 mt-1"></i>
-                    <div><b class="block uppercase text-xs text-slate-200">Brak pomyłek</b><p class="text-xs text-slate-400">Precyzyjne przypisanie do numerów muf i słupów.</p></div>
+                    <i class="fas fa-exclamation-triangle text-green-500 text-xl mt-1"></i>
+                    <div><b class="block uppercase text-xs text-slate-200 mb-1">Brak pomyłek</b><p class="text-xs text-slate-400">Precyzyjne przypisanie zdjęć do konkretnych numerów muf i słupów.</p></div>
                 </div>
                 <div class="flex items-start gap-4">
-                    <i class="fas fa-briefcase text-green-500 mt-1"></i>
-                    <div><b class="block uppercase text-xs text-slate-200">Profesjonalny wizerunek</b><p class="text-xs text-slate-400">Inwestor otrzymuje przejrzystą, geotagowaną dokumentację.</p></div>
+                    <i class="fas fa-handshake text-green-500 text-xl mt-1"></i>
+                    <div><b class="block uppercase text-xs text-slate-200 mb-1">Profesjonalny wizerunek</b><p class="text-xs text-slate-400">Inwestor otrzymuje geotagowaną dokumentację, co przyspiesza płatności.</p></div>
                 </div>
             </div>
         </div>
@@ -207,11 +197,10 @@
 
     <script>
         const screens = {
-            glowny: { img: './img/1000091575.jpg', color: 'purple', desc: 'PANEL GŁÓWNY: Porządkuje inwestycje według statusów (Wszystko, Gotowe, Rozpoczęte, Rozliczone).' },
-            dodaj: { img: './img/1000091578.jpg', color: 'green', desc: 'AUTO-FOLDER: Koniec z ręcznym tworzeniem folderów. Automatyczna sekwencja Projekt, Pomiary, Mufy.' },
-            magazyn: { img: './img/1000091580.jpg', color: 'red', desc: 'MAGAZYN: Błyskawiczne rozliczanie materiałów i wykrywanie braków bezpośrednio w terenie.' },
-            slupy: { img: './img/1000091573.jpg', color: 'yellow', desc: 'PRACA W TERENIE: Wybierz folder, zrób zdjęcie - resztę (GPS, data, opis) zrobi za Ciebie aplikacja.' },
-            gotowe: { img: './img/1000091582.jpg', color: 'blue', desc: 'EFEKT KOŃCOWY: Każde zdjęcie jest profesjonalnie opisane i od razu dostępne dla biura w chmurze.' }
+            glowny: { img: './img/1000091575.jpg', color: 'purple', desc: 'WYBIERZ INWESTYCJĘ: Aplikacja porządkuje budowy według statusów, ułatwiając nawigację.' },
+            dodaj: { img: './img/1000091578.jpg', color: 'green', desc: 'UTWÓRZ STRUKTURĘ: System automatycznie generuje foldery na mufy, słupy i pomiary jednym kliknięciem.' },
+            slupy: { img: './img/1000091573.jpg', color: 'yellow', desc: 'ZRÓB ZDJĘCIE: Wybierz element i wykonaj dokumentację. Lokalizacja GPS i data dodadzą się same.' },
+            gotowe: { img: './img/1000091582.jpg', color: 'blue', desc: 'GOTOWE! Zdjęcie jest już profesjonalnie opisane i widoczne w biurze na Dysku Google.' }
         };
 
         function changeScreen(key) {
@@ -222,7 +211,7 @@
                 display.src = screens[key].img;
                 desc.innerText = screens[key].desc;
                 display.style.opacity = '1';
-                document.querySelectorAll('button').forEach(btn => btn.classList.remove('ring-2', 'ring-purple-500', 'ring-green-500', 'ring-red-500', 'ring-yellow-500', 'ring-blue-500'));
+                document.querySelectorAll('button').forEach(btn => btn.classList.remove('ring-2', 'ring-purple-500', 'ring-green-500', 'ring-yellow-500', 'ring-blue-500'));
                 document.getElementById('btn-' + key).classList.add('ring-2', 'ring-' + screens[key].color + '-500');
             }, 200);
         }
