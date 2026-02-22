@@ -12,10 +12,10 @@
         .phone-shadow { box-shadow: 0 0 40px -10px rgba(168, 85, 247, 0.4); }
         .mobile-menu { display: none; }
         .mobile-menu.active { display: block; }
-        #phone-display { object-fit: contain; background-color: #1e293b; transition: all 0.3s ease; width: 100%; height: 100%; }
+        #phone-display { object-fit: contain; background-color: #1e293b; transition: all 0.3s ease; width: 100%; height: 100%; opacity: 1; }
         .feature-card { background: rgba(30, 41, 59, 0.4); border: 1px solid rgba(51, 65, 85, 1); transition: all 0.3s ease; height: 100%; }
         .feature-card:hover { border-color: #a855f7; transform: translateY(-5px); background: rgba(30, 41, 59, 0.6); }
-        .status-pill { padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: bold; text-transform: uppercase; }
+        .step-btn { transition: all 0.2s ease; border: 1px solid rgba(51, 65, 85, 1); }
     </style>
 </head>
 <body class="font-sans">
@@ -23,7 +23,7 @@
     <nav class="fixed w-full z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <img src="./img/logo.png" alt="Logo" class="h-10 w-auto" onerror="this.outerHTML='<span class=\'text-xl font-bold italic text-purple-500\'>Zdjęcia <span class=\'text-green-500\'>Inwestycje</span></span>'"> 
+                <span class="text-xl font-bold italic text-purple-500">Zdjęcia <span class="text-green-500">Inwestycje</span></span>
             </div>
             <div class="hidden lg:flex items-center gap-6 text-xs uppercase tracking-widest font-bold">
                 <a href="#demo" class="hover:text-purple-400 transition">Interaktywne Demo</a>
@@ -58,63 +58,45 @@
             <div class="grid lg:grid-cols-2 gap-10 items-start">
                 
                 <div class="space-y-3 order-2 lg:order-1">
-                    <button onclick="changeScreen('glowny')" id="btn-glowny" class="w-full text-left p-4 rounded-xl border border-slate-700 bg-slate-800 hover:border-purple-500 transition-all ring-2 ring-purple-500">
+                    <button onclick="changeScreen('glowny')" id="btn-glowny" class="step-btn w-full text-left p-4 rounded-xl bg-slate-800 ring-2 ring-purple-500">
                         <div class="flex items-center gap-4">
                             <i class="fas fa-th-list text-purple-500 text-xl"></i>
-                            <div>
-                                <h3 class="font-bold text-sm uppercase">1. Panel Główny</h3>
-                                <p class="text-[10px] text-slate-400 uppercase italic">Filtrowanie i wyszukiwanie.</p>
-                            </div>
+                            <div><h3 class="font-bold text-sm uppercase">1. Panel Główny</h3><p class="text-[10px] text-slate-400 uppercase italic">Zarządzanie projektami.</p></div>
                         </div>
                     </button>
 
-                    <button onclick="changeScreen('dodaj')" id="btn-dodaj" class="w-full text-left p-4 rounded-xl border border-slate-700 bg-slate-800 hover:border-green-500 transition-all">
+                    <button onclick="changeScreen('dodaj')" id="btn-dodaj" class="step-btn w-full text-left p-4 rounded-xl bg-slate-800">
                         <div class="flex items-center gap-4">
                             <i class="fas fa-folder-plus text-green-500 text-xl"></i>
-                            <div>
-                                <h3 class="font-bold text-sm uppercase">2. Nowy Projekt</h3>
-                                <p class="text-[10px] text-slate-400 uppercase italic">Dodawanie nowej inwestycji.</p>
-                            </div>
+                            <div><h3 class="font-bold text-sm uppercase">2. Nowy Projekt</h3><p class="text-[10px] text-slate-400 uppercase italic">Tworzenie inwestycji.</p></div>
                         </div>
                     </button>
 
-                    <button onclick="changeScreen('otwarty')" id="btn-otwarty" class="w-full text-left p-4 rounded-xl border border-slate-700 bg-slate-800 hover:border-blue-500 transition-all">
+                    <button onclick="changeScreen('otwarty')" id="btn-otwarty" class="step-btn w-full text-left p-4 rounded-xl bg-slate-800">
                         <div class="flex items-center gap-4">
                             <i class="fas fa-folder-open text-blue-400 text-xl"></i>
-                            <div>
-                                <h3 class="font-bold text-sm uppercase">3. Struktura Projektu</h3>
-                                <p class="text-[10px] text-slate-400 uppercase italic">Automatyczne foldery.</p>
-                            </div>
+                            <div><h3 class="font-bold text-sm uppercase">3. Struktura Projektu</h3><p class="text-[10px] text-slate-400 uppercase italic">Foldery systemowe.</p></div>
                         </div>
                     </button>
 
-                    <button onclick="changeScreen('slupy')" id="btn-slupy" class="w-full text-left p-4 rounded-xl border border-slate-700 bg-slate-800 hover:border-yellow-500 transition-all">
+                    <button onclick="changeScreen('slupy')" id="btn-slupy" class="step-btn w-full text-left p-4 rounded-xl bg-slate-800">
                         <div class="flex items-center gap-4">
                             <i class="fas fa-camera text-yellow-500 text-xl"></i>
-                            <div>
-                                <h3 class="font-bold text-sm uppercase">4. Praca w Terenie</h3>
-                                <p class="text-[10px] text-slate-400 uppercase italic">Robienie zdjęć.</p>
-                            </div>
+                            <div><h3 class="font-bold text-sm uppercase">4. Praca w Terenie</h3><p class="text-[10px] text-slate-400 uppercase italic">Wykonywanie zdjęć.</p></div>
                         </div>
                     </button>
 
-                    <button onclick="changeScreen('gotowe')" id="btn-gotowe" class="w-full text-left p-4 rounded-xl border border-slate-700 bg-slate-800 hover:border-orange-500 transition-all">
+                    <button onclick="changeScreen('gotowe')" id="btn-gotowe" class="step-btn w-full text-left p-4 rounded-xl bg-slate-800">
                         <div class="flex items-center gap-4">
                             <i class="fas fa-save text-orange-500 text-xl"></i>
-                            <div>
-                                <h3 class="font-bold text-sm uppercase">5. Efekt Końcowy</h3>
-                                <p class="text-[10px] text-slate-400 uppercase italic">Pliki gotowe na telefonie.</p>
-                            </div>
+                            <div><h3 class="font-bold text-sm uppercase">5. Pliki Gotowe</h3><p class="text-[10px] text-slate-400 uppercase italic">Zapis lokalny w pamięci.</p></div>
                         </div>
                     </button>
 
-                    <button onclick="changeScreen('sync')" id="btn-sync" class="w-full text-left p-4 rounded-xl border border-slate-700 bg-slate-900 hover:border-red-500 transition-all shadow-xl">
+                    <button onclick="changeScreen('sync')" id="btn-sync" class="step-btn w-full text-left p-4 rounded-xl bg-slate-800 shadow-xl">
                         <div class="flex items-center gap-4">
                             <i class="fas fa-sync text-red-500 text-xl"></i>
-                            <div>
-                                <h3 class="font-bold text-sm uppercase text-white">6. Synchronizacja</h3>
-                                <p class="text-[10px] text-red-400 uppercase font-bold italic">Przesyłanie na Dysk Google.</p>
-                            </div>
+                            <div><h3 class="font-bold text-sm uppercase">6. Synchronizacja</h3><p class="text-[10px] text-slate-400 uppercase italic">Przesyłanie na Dysk Google.</p></div>
                         </div>
                     </button>
                 </div>
@@ -180,10 +162,10 @@
                 <div class="text-slate-400 text-xs leading-relaxed space-y-2">
                     <p>Koniec z ręcznym tworzeniem folderów dla każdej inwestycji. Zdefiniuj schemat raz, a aplikacja powieli go dla każdego nowego projektu:</p>
                     <ul class="ml-2 space-y-2">
-                        <li><b>Automatyczna sekwencja:</b> Każdy nowy projekt posiada od razu foldery: Projekt, Pomiary, mufy (OSD, OPP, ZS), Studnie, Słupy.</li>
+                        <li><b>Automatyczna sekwencja:</b> Każdy nowy projekt posiada od razu foldery: Projekt, Pomiary, Mufy (OSD, OPP, ZS), Studnie, Słupy.</li>
                         <li><b>Tagowanie GPS i Data:</b> Każde zdjęcie ma wbudowaną lokalizację w metadanych, co gwarantuje rzetelność przed Inwestorem.</li>
                         <li><b>Dedykowany folder "Projekt":</b> Zawsze wyróżniony na szaro, by monter w terenie miał błyskawiczny dostęp do planów PDF.</li>
-                        <li><b>Zaawansowane raportowanie muf:</b> Możliwość numeracji i tworzenia pełnej dokumentacji wewnątrz konkretnej mufy (OSD, OPP, ZS).</li>
+                        <li><b>Zaawansowane raportowanie Muf:</b> Możliwość numeracji i tworzenia pełnej dokumentacji wewnątrz konkretnej mufy (OSD, OPP, ZS).</li>
                     </ul>
                 </div>
             </div>
@@ -257,16 +239,36 @@
             dodaj: { img: './img/1000091576.jpg', color: 'green', desc: 'NOWY PROJEKT: Dodawanie nowej inwestycji. Zdefiniuj parametry i ruszaj w teren.' },
             otwarty: { img: './img/1000091574.jpg', color: 'blue', desc: 'STRUKTURA PROJEKTU: Każdy nowy projekt posiada od razu foldery: Projekt, Pomiary, Mufy, Studnie, Słupy.' },
             slupy: { img: './img/1000091573.jpg', color: 'yellow', desc: 'PRACA W TERENIE: Wybierz element, zrób zdjęcie - aplikacja sama zadba o tagowanie GPS i datę.' },
-            gotowe: { img: './img/1000091582.jpg', color: 'orange', desc: 'EFEKT KOŃCOWY: Pliki gotowe. Zdjęcia są już opisane i zapisane lokalnie na telefonie w pamięci urządzenia.' },
+            gotowe: { img: './img/1000091582.jpg', color: 'orange', desc: 'PLIKI GOTOWE: Zdjęcia są już opisane i zapisane lokalnie na telefonie w pamięci urządzenia.' },
             sync: { img: './img/1000091575.jpg', color: 'red', desc: 'SYNCHRONIZACJA: Wróć do panelu głównego, wejdź w menu, kliknij synchronizuj i gotowe - Twoje pliki są przesłane na Dysk Google.' }
         };
 
         function changeScreen(key) {
             const display = document.getElementById('phone-display');
             const desc = document.getElementById('screen-desc');
+            const buttons = document.querySelectorAll('.step-btn');
+            
+            // Animacja przejścia
             display.style.opacity = '0';
+            
             setTimeout(() => {
                 display.src = screens[key].img;
                 desc.innerText = screens[key].desc;
                 display.style.opacity = '1';
-                document.querySelectorAll('button').forEach(btn => btn.classList.remove('ring-2', 'ring-purple-500', 'ring-green-500', 'ring-blue-500', 'ring-yellow-500', 'ring-orange-500', '
+                
+                // Resetowanie wszystkich przycisków
+                buttons.forEach(btn => {
+                    btn.classList.remove('ring-2', 'ring-purple-500', 'ring-green-500', 'ring-blue-500', 'ring-yellow-500', 'ring-orange-500', 'ring-red-500');
+                });
+                
+                // Aktywacja klikniętego przycisku
+                document.getElementById('btn-' + key).classList.add('ring-2', 'ring-' + screens[key].color + '-500');
+            }, 200);
+        }
+
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
