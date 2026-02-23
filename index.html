@@ -17,11 +17,18 @@
         .feature-card:hover { border-color: #a855f7; transform: translateY(-5px); background: rgba(30, 41, 59, 0.6); }
         .step-btn { transition: all 0.2s ease; border: 1px solid rgba(51, 65, 85, 1); cursor: pointer; }
         .step-btn:hover { background: rgba(51, 65, 85, 0.5); }
+        
+        /* Poprawka dla zachowania pozycji telefonu */
+        .sticky-container {
+            position: sticky;
+            top: 120px; /* Wysokość od góry ekranu */
+            align-self: flex-start;
+        }
     </style>
 </head>
 <body class="font-sans">
 
-            <nav class="fixed w-full z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800">
+    <nav class="fixed w-full z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
             <div class="flex items-center gap-3">
                 <div class="h-10 w-10 overflow-hidden rounded-lg border border-slate-700 shadow-sm shadow-purple-500/20">
@@ -33,6 +40,7 @@
             <div class="hidden lg:flex items-center gap-6 text-xs uppercase tracking-widest font-bold">
                 <a href="#demo" class="hover:text-purple-400 transition">Interaktywne Demo</a>
                 <a href="#funkcje" class="hover:text-purple-400 transition">O Systemie</a>
+                <a href="#faq" class="hover:text-purple-400 transition">Licencja</a>
                 <a href="#kontakt" class="hover:text-purple-400 transition">Kontakt</a>
                 <a href="LINK_DO_PDF" class="hover:text-purple-400 transition underline decoration-purple-500">Instrukcja PDF</a>
                 <a href="LINK_DO_APP" class="bg-green-600 px-5 py-2 rounded-lg hover:bg-green-700 transition text-white shadow-lg">Pobierz Aplikację</a>
@@ -106,14 +114,16 @@
                     </button>
                 </div>
 
-                <div class="flex flex-col items-center order-1 lg:order-2 sticky top-28">
-                    <div class="w-[220px] h-[450px] bg-slate-800 rounded-[2.5rem] border-[8px] border-slate-700 relative overflow-hidden phone-shadow">
-                        <img id="phone-display" src="./img/1000091575.jpg">
-                    </div>
-                    <div class="mt-4 w-full max-w-[240px] bg-slate-800/80 p-3 rounded-xl border border-slate-700 text-center shadow-lg">
-                        <p id="screen-desc" class="text-[12px] text-slate-200 leading-snug font-medium">
-                            PANEL GŁÓWNY: Aplikacja porządkuje inwestycje według statusów, co pozwala na błyskawiczne zarządzanie wieloma budowami jednocześnie.
-                        </p>
+                <div class="order-1 lg:order-2">
+                    <div class="sticky-container flex flex-col items-center">
+                        <div class="w-[220px] h-[450px] bg-slate-800 rounded-[2.5rem] border-[8px] border-slate-700 relative overflow-hidden phone-shadow">
+                            <img id="phone-display" src="./img/1000091575.jpg">
+                        </div>
+                        <div class="mt-4 w-full max-w-[240px] bg-slate-800/80 p-3 rounded-xl border border-slate-700 text-center shadow-lg">
+                            <p id="screen-desc" class="text-[12px] text-slate-200 leading-snug font-medium">
+                                PANEL GŁÓWNY: Aplikacja porządkuje inwestycje według statusów, co pozwala na błyskawiczne zarządzanie wieloma budowami jednocześnie.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -130,75 +140,37 @@
             <div class="feature-card p-6 rounded-2xl">
                 <div class="text-purple-500 text-3xl mb-4"><i class="fas fa-info-circle"></i></div>
                 <h4 class="font-bold uppercase mb-3 text-sm">1. WPROWADZENIE</h4>
-                <p class="text-slate-400 text-xs leading-relaxed">Zdjęcia Inwestycje to specjalistyczne narzędzie zaprojektowane dla ekip monterskich i inżynierów branży telekomunikacyjnej. System eliminuje chaos w galerii telefonu, automatyzuje opisywanie zdjęć i integruje dokumentację fotograficzną z ewidencją materiałową oraz projektową.</p>
+                <p class="text-slate-400 text-xs leading-relaxed">System eliminuje chaos w galerii telefonu, automatyzuje opisywanie zdjęć i integruje dokumentację fotograficzną z ewidencją materiałową oraz projektową.</p>
             </div>
 
             <div class="feature-card p-6 rounded-2xl">
                 <div class="text-blue-500 text-3xl mb-4"><i class="fas fa-filter"></i></div>
-                <h4 class="font-bold uppercase mb-3 text-sm">2. PANEL GŁÓWNY I INTUICYJNE FILTROWANIE</h4>
-                <div class="text-slate-400 text-xs leading-relaxed space-y-1">
-                    <p>Aplikacja porządkuje inwestycje według statusów, co pozwala na błyskawiczne zarządzanie wieloma budowami jednocześnie:</p>
-                    <ul class="ml-2 space-y-1">
-                        <li><span class="text-purple-400 font-bold">Wszystko (Fioletowy):</span> Pełny wgląd w historię działań.</li>
-                        <li><span class="text-green-400 font-bold">Gotowe (Zielony):</span> Projekty z kompletną dokumentacją, gotowe do odbioru.</li>
-                        <li><span class="text-blue-400 font-bold">Rozpoczęte (Niebieski):</span> Aktywne place budowy w toku realizacji.</li>
-                        <li><span class="text-slate-400 font-bold">Rozliczone (Szary):</span> Archiwalne projekty po finalnym rozliczeniu.</li>
-                    </ul>
-                    <p class="mt-2 italic text-[11px] border-t border-slate-700 pt-2">Wskazówka: Wyszukiwarka pozwala odnaleźć projekt w sekundę po nazwie miejscowości lub numerze ewidencyjnym (np. F01011714).</p>
-                </div>
+                <h4 class="font-bold uppercase mb-3 text-sm">2. PANEL GŁÓWNY</h4>
+                <p class="text-slate-400 text-xs leading-relaxed">Filtrowanie projektów według statusów: Wszystko, Gotowe, Rozpoczęte, Rozliczone. Wyszukiwarka pozwala odnaleźć projekt w sekundę.</p>
             </div>
 
             <div class="feature-card p-6 rounded-2xl">
                 <div class="text-red-500 text-3xl mb-4"><i class="fas fa-calculator"></i></div>
-                <h4 class="font-bold uppercase mb-3 text-sm">3. INTELIGENTNY MAGAZYN I KONTROLA KOSZTÓW</h4>
-                <div class="text-slate-400 text-xs leading-relaxed space-y-2">
-                    <p>System precyzyjnie śledzi obieg materiałów na budowie:</p>
-                    <ul class="ml-2 space-y-2">
-                        <li><b>Pobrane vs Zużyte:</b> Błyskawiczne rozliczanie materiałów i wykrywanie braków.</li>
-                        <li><b>Szybki Import (Bulk Import):</b> Możliwość wklejenia listy materiałów z pliku zewnętrznego.</li>
-                        <li><b>Eksport CSV:</b> Jednym kliknięciem generujesz gotowe zestawienie materiałowe do faktury lub protokołu.</li>
-                    </ul>
-                </div>
+                <h4 class="font-bold uppercase mb-3 text-sm">3. MAGAZYN I KOSZTY</h4>
+                <p class="text-slate-400 text-xs leading-relaxed">System precyzyjnie śledzi obieg materiałów na budowie. Błyskawiczne rozliczanie materiałów i eksport CSV jednym kliknięciem.</p>
             </div>
 
             <div class="feature-card p-6 rounded-2xl">
                 <div class="text-green-500 text-3xl mb-4"><i class="fas fa-sitemap"></i></div>
-                <h4 class="font-bold uppercase mb-3 text-sm">4. AUTOMATYZACJA I STRUKTURA "AUTO-FOLDER"</h4>
-                <div class="text-slate-400 text-xs leading-relaxed space-y-2">
-                    <p>Koniec z ręcznym tworzeniem folderów dla każdej inwestycji. Zdefiniuj schemat raz, a aplikacja powieli go dla każdego nowego projektu:</p>
-                    <ul class="ml-2 space-y-2">
-                        <li><b>Automatyczna sekwencja:</b> Każdy nowy projekt posiada od razu foldery: Projekt, Pomiary, Mufy (OSD, OPP, ZS), Studnie, Słupy.</li>
-                        <li><b>Tagowanie GPS i Data:</b> Każde zdjęcie ma wbudowaną lokalizację w metadanych, co gwarantuje rzetelność przed Inwestorem.</li>
-                        <li><b>Dedykowany folder "Projekt":</b> Zawsze wyróżniony na szaro, by monter w terenie miał błyskawiczny dostęp do planów PDF.</li>
-                        <li><b>Zaawansowane raportowanie Muf:</b> Możliwość numeracji i tworzenia pełnej dokumentacji wewnątrz konkretnej mufy (OSD, OPP, ZS).</li>
-                    </ul>
-                </div>
+                <h4 class="font-bold uppercase mb-3 text-sm">4. AUTO-FOLDER</h4>
+                <p class="text-slate-400 text-xs leading-relaxed">Automatyczna sekwencja folderów: Projekt, Pomiary, Mufy, Studnie, Słupy. Każde zdjęcie posiada geotagowanie GPS i datę.</p>
             </div>
 
             <div class="feature-card p-6 rounded-2xl">
                 <div class="text-cyan-500 text-3xl mb-4"><i class="fas fa-users-cog"></i></div>
-                <h4 class="font-bold uppercase mb-3 text-sm">5. PRACA GRUPOWA I SYNCHRONIZACJA (MULTIPLE DEVICES)</h4>
-                <div class="text-slate-400 text-xs leading-relaxed space-y-2">
-                    <p>System umożliwia płynną współpracę całego zespołu w czasie rzeczywistym:</p>
-                    <ul class="ml-2 space-y-2">
-                        <li><b>Wspólny projekt:</b> Kilka telefonów (ekipy A, B, C) może pracować nad tym samym zadaniem.</li>
-                        <li><b>Brak duplikatów:</b> Jeśli ekipy użyją tej samej nazwy projektu i folderów, system połączy zdjęcia na dysku Google w jeden spójny folder bez powielania plików.</li>
-                        <li><b>Podgląd "Online":</b> Dzięki integracji z Google Drive (API), pliki z chmury są widoczne bezpośrednio w aplikacji jako foldery "online".</li>
-                    </ul>
-                </div>
+                <h4 class="font-bold uppercase mb-3 text-sm">5. PRACA GRUPOWA</h4>
+                <p class="text-slate-400 text-xs leading-relaxed">Kilka telefonów może pracować nad tym samym zadaniem bez duplikatów. Integracja z Google Drive API pozwala na podgląd w czasie rzeczywistym.</p>
             </div>
 
             <div class="feature-card p-6 rounded-2xl">
                 <div class="text-yellow-500 text-3xl mb-4"><i class="fas fa-bolt"></i></div>
-                <h4 class="font-bold uppercase mb-3 text-sm">6. FUNKCJONALNOŚĆ W TERENIE</h4>
-                <div class="text-slate-400 text-xs leading-relaxed space-y-2">
-                    <ul class="ml-2 space-y-2">
-                        <li><b>Tryb Offline:</b> Aplikacja działa lokalnie bez dostępu do sieci. Internet jest potrzebny tylko podczas synchronizacji z chmurą.</li>
-                        <li><b>Obsługa Dokumentacji Technicznej:</b> Możliwość wgrywania pomiarów (pliki PDF oraz .sor) bezpośrednio do folderu "Pomiary".</li>
-                        <li><b>Interaktywne Projektowanie:</b> Funkcja tworzenia mini-projektów na mapie (dodawanie muf w studniach, nanoszenie słupów i planowanie przebiegu linii).</li>
-                        <li><b>Edycja i Adnotacje:</b> Pełna swoboda w zmianie nazw plików i dodawaniu nowych folderów w trakcie prac.</li>
-                    </ul>
-                </div>
+                <h4 class="font-bold uppercase mb-3 text-sm">6. TRYB OFFLINE</h4>
+                <p class="text-slate-400 text-xs leading-relaxed">Praca bez dostępu do sieci. Edycja adnotacji, pomiarów i projektów na mapie dostępna w każdych warunkach terenowych.</p>
             </div>
         </div>
 
@@ -207,19 +179,30 @@
             <div class="grid md:grid-cols-2 gap-8 text-xs text-left">
                 <div class="flex gap-4">
                     <i class="fas fa-clock text-green-500 text-2xl"></i>
-                    <p><span class="text-white font-bold uppercase">Oszczędność czasu (do 40%):</span> Brak konieczności ręcznej segregacji i opisywania zdjęć po powrocie do biura.</p>
+                    <p><span class="text-white font-bold uppercase">Oszczędność czasu:</span> Brak konieczności ręcznej segregacji zdjęć po powrocie do biura.</p>
                 </div>
                 <div class="flex gap-4">
                     <i class="fas fa-images text-green-500 text-2xl"></i>
-                    <p><span class="text-white font-bold uppercase">Czysta Galeria:</span> Zdjęcia inwestycji nie mieszają się z prywatnymi zdjęciami w telefonie.</p>
+                    <p><span class="text-white font-bold uppercase">Czysta Galeria:</span> Zdjęcia inwestycji są oddzielone od prywatnych plików w telefonie.</p>
                 </div>
-                <div class="flex gap-4">
-                    <i class="fas fa-circle-exclamation text-green-500 text-2xl"></i>
-                    <p><span class="text-white font-bold uppercase">Brak pomyłek:</span> Precyzyjne przypisanie zdjęć do numerów muf i słupów wyklucza błędy w dokumentacji powykonawczej.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-20 bg-slate-900/50 border-t border-slate-800 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold uppercase tracking-widest mb-4 italic">Licencja i Wsparcie</h2>
+                <div class="h-1 w-24 bg-green-500 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-slate-800/40 p-6 rounded-2xl border border-slate-700">
+                    <h4 class="text-purple-400 font-bold uppercase text-sm mb-3">Subskrypcja</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">Elastyczne plany: rozliczenie miesięczne lub abonament roczny z rabatem. Licencja przypisana do urządzenia.</p>
                 </div>
-                <div class="flex gap-4">
-                    <i class="fas fa-medal text-green-500 text-2xl"></i>
-                    <p><span class="text-white font-bold uppercase">Profesjonalny wizerunek:</span> Inwestor otrzymuje przejrzystą, geotagowaną dokumentację, co przyspiesza płatności.</p>
+                <div class="bg-slate-800/40 p-6 rounded-2xl border border-slate-700">
+                    <h4 class="text-purple-400 font-bold uppercase text-sm mb-3">Wsparcie</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">Zapewniamy pełną pomoc techniczną przy konfiguracji Dysku Google i regularne aktualizacje.</p>
                 </div>
             </div>
         </div>
@@ -228,7 +211,7 @@
     <section id="kontakt" class="py-20 bg-slate-900 border-t border-slate-800 text-center px-4">
         <h2 class="text-3xl font-bold mb-6 uppercase italic">Kontakt</h2>
         <div class="bg-slate-800/80 p-10 rounded-[2.5rem] border border-slate-700 shadow-2xl inline-block">
-            <p class="text-slate-400 mb-4 font-bold uppercase tracking-widest text-sm">Licencja &nbsp;&nbsp; Pytania &nbsp;&nbsp; Kontakt</p>
+            <p class="text-slate-400 mb-4 font-bold uppercase tracking-widest text-sm">Pytania &nbsp;&nbsp; Licencja &nbsp;&nbsp; Kontakt</p>
             <a href="mailto:mpktechdev@gmail.com" class="text-xl md:text-3xl font-bold text-purple-400 hover:text-green-400 transition break-all underline decoration-slate-700 underline-offset-8">
                 mpktechdev@gmail.com
             </a>
@@ -246,7 +229,7 @@
             otwarty: { img: './img/1000091574.jpg', color: 'blue', desc: 'STRUKTURA PROJEKTU: Każdy nowy projekt posiada od razu foldery: Projekt, Pomiary, Mufy, Studnie, Słupy.' },
             slupy: { img: './img/1000091573.jpg', color: 'yellow', desc: 'PRACA W TERENIE: Wybierz element, zrób zdjęcie - aplikacja sama zadba o tagowanie GPS i datę.' },
             gotowe: { img: './img/1000091582.jpg', color: 'orange', desc: 'PLIKI GOTOWE: Zdjęcia są już opisane i zapisane lokalnie na telefonie w pamięci urządzenia.' },
-            sync: { img: './img/1000091600.jpg', color: 'red', desc: 'SYNCHRONIZACJA: Wróć do panelu głównego, wejdź w menu, kliknij synchronizuj i gotowe - Twoje pliki są przesłane na Dysk Google.' }
+            sync: { img: './img/1000091600.jpg', color: 'red', desc: 'SYNCHRONIZACJA: Wróć do panelu głównego, kliknij synchronizuj i gotowe - pliki przesłane na Dysk Google.' }
         };
 
         function changeScreen(key) {
@@ -254,7 +237,6 @@
             const desc = document.getElementById('screen-desc');
             const buttons = document.querySelectorAll('.step-btn');
             
-            // Animacja wygaszania
             display.style.opacity = '0';
             
             setTimeout(() => {
@@ -262,12 +244,10 @@
                 desc.innerText = screens[key].desc;
                 display.style.opacity = '1';
                 
-                // Usunięcie ramek ze wszystkich przycisków
                 buttons.forEach(btn => {
                     btn.classList.remove('ring-2', 'ring-purple-500', 'ring-green-500', 'ring-blue-500', 'ring-yellow-500', 'ring-orange-500', 'ring-red-500');
                 });
                 
-                // Dodanie ramki do klikniętego przycisku
                 const activeBtn = document.getElementById('btn-' + key);
                 if(activeBtn) {
                     activeBtn.classList.add('ring-2', 'ring-' + screens[key].color + '-500');
