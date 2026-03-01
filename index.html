@@ -249,14 +249,16 @@
     </footer>
 
     <script>
-        const screens = {
+                const screens = {
             glowny: { img: './img/1000091575.jpg', color: 'purple', desc: 'PANEL GŁÓWNY: Aplikacja porządkuje inwestycje według statusów, co pozwala na błyskawiczne zarządzanie wieloma budowami jednocześnie.' },
             dodaj: { img: './img/1000091576.jpg', color: 'green', desc: 'NOWY PROJEKT: Dodawanie nowej inwestycji. Zdefiniuj parametry i ruszaj w teren.' },
             otwarty: { img: './img/1000091574.jpg', color: 'blue', desc: 'STRUKTURA PROJEKTU: Każdy nowy projekt posiada odrazu zdefiniowane foldery w opcji "Automatyzacja" np: Projekt, Pomiary, Mufy, Studnie, Słupy.' },
             slupy: { img: './img/1000091573.jpg', color: 'yellow', desc: 'PRACA W TERENIE: Wybierz element, zrób zdjęcie - aplikacja sama zadba o tagowanie GPS i datę.' },
-            gotowe: { img: './img/1000091582.jpg', color: 'orange', desc: 'PLIKI GOTOWE: Zdjęcia są zapisane lokalnie na telefonie w pamięci urządzenia (Geotagowanie przypisane do metadanych).  },
+            // TUTAJ BYŁ BŁĄD - dodałem brakujący apostrof ' na końcu linii:
+            gotowe: { img: './img/1000091582.jpg', color: 'orange', desc: 'PLIKI GOTOWE: Zdjęcia są zapisane lokalnie na telefonie w pamięci urządzenia (Geotagowanie przypisane do metadanych).' }, 
             sync: { img: './img/1000091600.jpg', color: 'red', desc: 'SYNCHRONIZACJA: Wróć do panelu głównego, kliknij synchronizuj i gotowe - Twoje pliki są przesłane na Dysk Google.' }
         };
+
 
         function changeScreen(key) {
             const display = document.getElementById('phone-display');
