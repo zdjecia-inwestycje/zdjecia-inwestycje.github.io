@@ -249,43 +249,76 @@
     </footer>
 
     <script>
-                const screens = {
-            glowny: { img: './img/1000091575.jpg', color: 'purple', desc: 'PANEL GŁÓWNY: Aplikacja porządkuje inwestycje według statusów, co pozwala na błyskawiczne zarządzanie wieloma budowami jednocześnie.' },
-            dodaj: { img: './img/1000091576.jpg', color: 'green', desc: 'NOWY PROJEKT: Dodawanie nowej inwestycji. Zdefiniuj parametry i ruszaj w teren.' },
-            otwarty: { img: './img/1000091574.jpg', color: 'blue', desc: 'STRUKTURA PROJEKTU: Każdy nowy projekt posiada odrazu zdefiniowane foldery w opcji "Automatyzacja" np: Projekt, Pomiary, Mufy, Studnie, Słupy.' },
-            slupy: { img: './img/1000091573.jpg', color: 'yellow', desc: 'PRACA W TERENIE: Wybierz element, zrób zdjęcie - aplikacja sama zadba o tagowanie GPS i datę.' },
-            // TUTAJ BYŁ BŁĄD - dodałem brakujący apostrof ' na końcu linii:
-            gotowe: { img: './img/1000091582.jpg', color: 'orange', desc: 'PLIKI GOTOWE: Zdjęcia są zapisane lokalnie na telefonie w pamięci urządzenia (Geotagowanie przypisane do metadanych).' }, 
-            sync: { img: './img/1000091600.jpg', color: 'red', desc: 'SYNCHRONIZACJA: Wróć do panelu głównego, kliknij synchronizuj i gotowe - Twoje pliki są przesłane na Dysk Google.' }
-        };
-
-
-        function changeScreen(key) {
-            const display = document.getElementById('phone-display');
-            const desc = document.getElementById('screen-desc');
-            const buttons = document.querySelectorAll('.step-btn');
-            
-            display.style.opacity = '0';
-            
-            setTimeout(() => {
-                display.src = screens[key].img;
-                desc.innerText = screens[key].desc;
-                display.style.opacity = '1';
-                
-                buttons.forEach(btn => {
-                    btn.classList.remove('ring-2', 'ring-purple-500', 'ring-green-500', 'ring-blue-500', 'ring-yellow-500', 'ring-orange-500', 'ring-red-500');
-                });
-                
-                const activeBtn = document.getElementById('btn-' + key);
-                if(activeBtn) {
-                    activeBtn.classList.add('ring-2', 'ring-' + screens[key].color + '-500');
-                }
-            }, 150);
+    // 1. Dane do ekranów - upewnij się, że nazwy plików w ./img/ są poprawne
+    const screens = {
+        glowny: { 
+            img: './img/1000091575.jpg', 
+            color: 'purple', 
+            desc: 'PANEL GŁÓWNY: Aplikacja porządkuje inwestycje według statusów, co pozwala na błyskawiczne zarządzanie wieloma budowami jednocześnie.' 
+        },
+        dodaj: { 
+            img: './img/1000091576.jpg', 
+            color: 'green', 
+            desc: 'NOWY PROJEKT: Dodawanie nowej inwestycji. Zdefiniuj parametry i ruszaj w teren.' 
+        },
+        otwarty: { 
+            img: './img/1000091574.jpg', 
+            color: 'blue', 
+            desc: 'STRUKTURA PROJEKTU: Każdy nowy projekt posiada od razu zdefiniowane foldery w opcji "Automatyzacja" np: Projekt, Pomiary, Mufy, Studnie, Słupy.' 
+        },
+        slupy: { 
+            img: './img/1000091573.jpg', 
+            color: 'yellow', 
+            desc: 'PRACA W TERENIE: Wybierz element, zrób zdjęcie - aplikacja sama zadba o tagowanie GPS i datę.' 
+        },
+        gotowe: { 
+            img: './img/1000091582.jpg', 
+            color: 'orange', 
+            desc: 'PLIKI GOTOWE: Zdjęcia są zapisane lokalnie na telefonie w pamięci urządzenia (Geotagowanie przypisane do metadanych).' 
+        },
+        sync: { 
+            img: './img/1000091600.jpg', 
+            color: 'red', 
+            desc: 'SYNCHRONIZACJA: Wróć do panelu głównego, kliknij synchronizuj i gotowe - Twoje pliki są przesłane na Dysk Google.' 
         }
+    };
 
-        function toggleMenu() {
-            document.getElementById('mobileMenu').classList.toggle('active');
-        }
-    </script>
+    // 2. Główna funkcja zmiany ekranu
+    function changeScreen(key) {
+        const display = document.getElementById('phone-display');
+        const desc = document.getElementById('screen-desc');
+        const buttons = document.querySelectorAll('.step-btn');
+        
+        // Sprawdź czy dane dla tego klucza istnieją
+        if (!screens[key]) return;
+
+        // Efekt płynnego przejścia
+        display.style.opacity = '0';
+        
+        setTimeout(() => {
+            // Zmiana obrazka i opisu
+            display.src = screens[key].img;
+            desc.innerText = screens[key].desc;
+            display.style.opacity = '1';
+            
+            // Usuwanie świecenia (ring) ze wszystkich przycisków
+            buttons.forEach(btn => {
+                btn.classList.remove('ring-2', 'ring-purple-500', 'ring-green-500', 'ring-blue-500', 'ring-yellow-500', 'ring-orange-500', 'ring-red-500');
+            });
+            
+            // Dodanie świecenia do aktualnie klikniętego przycisku
+            const activeBtn = document.getElementById('btn-' + key);
+            if(activeBtn) {
+                activeBtn.classList.add('ring-2', 'ring-' + screens[key].color + '-500');
+            }
+        }, 150);
+    }
+
+    // 3. Obsługa menu mobilnego
+    function toggleMenu() {
+        const menu = document.getElementById('mobileMenu');
+        menu.classList.toggle('active');
+    }
+</script>
 </body>
 </html>
