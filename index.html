@@ -237,18 +237,54 @@
     </section>
 
     <section id="kontakt" class="py-20 bg-slate-900 border-t border-slate-800 text-center px-4">
-        <h2 class="text-3xl font-bold mb-6 uppercase italic">Kontakt</h2>
-        <div class="bg-slate-800/80 p-10 rounded-[2.5rem] border border-slate-700 shadow-2xl inline-block">
-            <p class="text-slate-400 mb-4 font-bold uppercase tracking-widest text-sm">Licencja &nbsp;&nbsp; Pytania &nbsp;&nbsp; Kontakt</p>
+    <section id="kontakt" class="py-20 px-6 max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-6 uppercase italic">Kontakt & Wsparcie</h2>
+    
+    <div class="bg-slate-800/80 p-10 rounded-[2.5rem] border border-slate-700 shadow-2xl inline-block w-full">
+        <div class="flex flex-wrap justify-center gap-6 mb-8 border-b border-slate-700 pb-6">
+            <button onclick="showTab('licencja')" class="text-slate-400 hover:text-purple-400 font-bold uppercase tracking-widest text-sm transition">Licencja</button>
+            <button onclick="showTab('faq')" class="text-slate-400 hover:text-purple-400 font-bold uppercase tracking-widest text-sm transition">FAQ</button>
+            <button onclick="showTab('email')" class="text-slate-400 hover:text-purple-400 font-bold uppercase tracking-widest text-sm transition">Kontakt</button>
+        </div>
+
+        <div id="tab-licencja" class="tab-content hidden">
+            <h3 class="text-purple-400 font-bold mb-4">SYSTEM LICENCJONOWANIA</h3>
+            <p class="text-slate-300 text-lg leading-relaxed">
+                Wypróbuj **7-dniowy okres próbny** bez zobowiązań!<br>
+                Pobierz aplikację, zainstaluj ją, a następnie wyślij **ID skopiowane z aplikacji** na nasz adres e-mail, aby aktywować pełny dostęp.
+            </p>
+        </div>
+
+        <div id="tab-faq" class="tab-content hidden text-left max-w-2xl mx-auto">
+            <div class="space-y-4">
+                <details class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
+                    <summary class="font-bold text-purple-400 cursor-pointer text-sm uppercase">Gdzie trafiają moje zdjęcia?</summary>
+                    <p class="text-slate-400 mt-2 text-sm">Wszystkie zdjęcia są przechowywane lokalnie na Twoim telefonie oraz (opcjonalnie) na Twoim prywatnym Dysku Google. Nie wysyłamy ich na żadne zewnętrzne serwery.</p>
+                </details>
+                <details class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
+                    <summary class="font-bold text-purple-400 cursor-pointer text-sm uppercase">Czy aplikacja działa bez internetu?</summary>
+                    <p class="text-slate-400 mt-2 text-sm">Tak! Możesz wykonywać dokumentację w szczerym polu. Synchronizacja z chmurą i eksport PDF nastąpi, gdy tylko odzyskasz zasięg.</p>
+                </details>
+                <details class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
+                    <summary class="font-bold text-purple-400 cursor-pointer text-sm uppercase">Jak wygenerować raport PDF?</summary>
+                    <p class="text-slate-400 mt-2 text-sm">W menu głównym wybierz projekt, a następnie kliknij ikonę eksportu. Aplikacja automatycznie przygotuje przejrzysty dokument z Twoimi zdjęciami i opisami.</p>
+                </details>
+            </div>
+        </div>
+
+        <div id="tab-email" class="tab-content">
+            <p class="text-slate-400 mb-4 font-bold uppercase tracking-widest text-sm">Napisz do nas</p>
             <a href="mailto:mpktechdev@gmail.com" class="text-xl md:text-3xl font-bold text-purple-400 hover:text-green-400 transition break-all underline decoration-slate-700 underline-offset-8">
                 mpktechdev@gmail.com
             </a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer class="py-12 text-center text-slate-600 border-t border-slate-800 text-[10px] uppercase tracking-widest">
-        Zdjęcia Inwestycje &copy; 2024. Branża Telekomunikacyjna.
-    </footer>
+<footer class="py-12 text-center text-slate-600 border-t border-slate-800 text-[10px] uppercase tracking-widest">
+    Zdjęcia Inwestycje &copy; 2026. Branża Telekomunikacyjna.
+</footer>
+
 
     <script>
     // 1. Dane do ekranów - upewnij się, że nazwy plików w ./img/ są poprawne
@@ -321,6 +357,17 @@
         const menu = document.getElementById('mobileMenu');
         menu.classList.toggle('active');
     }
+        <script>
+function showTab(tabId) {
+    // Ukryj wszystkie zakładki
+    document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.add('hidden');
+    });
+    // Pokaż wybraną zakładkę
+    document.getElementById('tab-' + tabId).classList.remove('hidden');
+}
+</script>
+        
 </script>
 </body>
 </html>
