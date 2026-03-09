@@ -149,38 +149,50 @@
         </h3>
         
         <div class="text-slate-300 leading-relaxed text-sm space-y-4 mb-8">
-            <p>System Zdjęcia Inwestycje automatyzuje Twoją pracę. Możesz zdefiniować foldery, które pojawią się w każdym nowym projekcie.</p>
+            <p>System Zdjęcia Inwestycje sam przygotuje Twoje miejsce pracy. Możesz zdefiniować do 9 automatycznych folderów, które pojawią się w każdym nowym projekcie.</p>
             
-            <p class="font-bold text-white mt-4">Specjalne Foldery Systemowe</p>
+            <p class="font-bold text-white mt-4">Jak ustawić automatyzację?</p>
+            <ul class="list-none space-y-2">
+                <li><strong>Menu Ustawień:</strong> Kliknij ikonę trzech kresek (☰) w prawym górnym rogu ekranu głównego.</li>
+                <li><strong>Konfiguracja:</strong> Zdefiniuj nazwy folderów, których najczęściej używasz (np. Studnie, Słupy, Wykopy). Zapisz konfigurację.</li>
+                <li><strong>Efekt:</strong> Od teraz każdy nowo dodany projekt będzie miał już gotowy ten sam układ katalogów.</li>
+            </ul>
+
+            <p class="font-bold text-white mt-6">Specjalne Foldery Systemowe</p>
             <ul class="space-y-4">
-                <li>🩶 <strong>Folder "PROJEKT":</strong> Służy wyłącznie do przechowywania dokumentacji w formacie PDF.</li>
-                <li>📏 <strong>Folder "POMIARY":</strong> Przeznaczony na pliki PDF oraz .sor. Wybieraj pełną ścieżkę dostępu w menedżerze plików.</li>
-                <li>💠 <strong>Folder "MUFY":</strong> Moduł zarządzania złączami. Kliknij turkusowy plus (+), wybierz typ (OPP, OSD, ZS) i wpisz numer (np. 0001), aby system stworzył pełną nazwę (np. OPP0001).</li>
+                <li>🩶 <strong>Folder "PROJEKT" (Szary):</strong> Zawsze podświetlony na szaro, abyś w pełnym słońcu od razu wiedział, gdzie są mapy. Służy wyłącznie do przechowywania dokumentacji w formacie PDF.</li>
+                <li>📏 <strong>Folder "POMIARY":</strong> Przeznaczony na pliki dokumentujące sieć: PDF oraz .sor (reflektometryczne). <br><em>Ważna uwaga: Aby poprawnie dodać pliki, nie używaj "szybkiego wyboru" Androida. Wybierz pełną ścieżkę dostępu (np. Dysk wewnętrzny > Download > Twoje_Pomiary).</em></li>
+                <li>💠 <strong>Folder "MUFY":</strong> Zaawansowany moduł zarządzania złączami. Kliknij turkusowy plus (+) w prawym dolnym rogu. Wybierz typ złącza: OPP, OSD lub ZS. Wpisz tylko numer (np. 0001). System sam stworzy pełną nazwę (np. OPP0001).</li>
                 
                 <li class="mt-4">💡 <strong>Folder "SŁUPY / STUDNIE":</strong> 
-                    <p class="mt-1">Po wejściu w folder, w menu (☰) użyj opcji <strong>"Wklej listę numerów"</strong>. Wklej numery kabli po przecinku (np. <em>OKH0062140, OKW0866485</em>). Po zapisaniu, w menu <strong>"Wybierz numer"</strong> będziesz mógł aktywować wybrany kabel. Aplikacja automatycznie nazwie zdjęcie Twoim numerem (np. <em>OKH0062140_20260304_134034</em>). Wybierz "Standard (IMG)", aby wrócić do nazw domyślnych.</p>
+                    Po wejściu w folder kliknij menu (☰) i wybierz <strong>"Wklej listę numerów"</strong>. Wklej numery kabli po przecinku (np. OKH0062140, OKW0866485). Po zapisaniu, w menu <strong>"Wybierz numer"</strong> będziesz mógł aktywować dany numer kabla. Aplikacja automatycznie dopisze go do nazwy zdjęcia (np. <em>OKH0062140_20260304_134034</em>). Jeśli wybierzesz "Standard (IMG)", nazwy będą standardowe.
                 </li>
 
                 <li class="mt-4">⚡ <strong>Folder "MOC OPTYCZNA":</strong> 
-                    <p class="mt-1">W menu wybierz <strong>"Wybierz Mufę"</strong>. Lista dostępnych muf jest pobierana automatycznie z folderu "Mufy". Wybierz mufę (np. <em>OSD0087</em>), a aplikacja sama doda ją do nazwy zdjęcia (np. <em>OSD0087_20260304_134034</em>). Wybierz "Standard (IMG)" dla standardowych nazw plików.</p>
+                    W menu kliknij <strong>"Wybierz Mufę"</strong> (lista jest pobierana automatycznie z folderu "Mufy"). Po wybraniu mufy (np. OSD0087), aplikacja automatycznie podstawi ją do nazwy zdjęcia (np. <em>OSD0087_20260304_134034</em>). Wybierz "Standard (IMG)", aby wrócić do nazw domyślnych.
                 </li>
             </ul>
 
             <p class="font-bold text-white mt-6">Praca z aparatem i Geotagowanie 📍</p>
-            <p>Po wejściu w dowolny folder możesz zacząć dokumentację:</p>
+            <p>Po wejściu w dowolny folder (stworzony automatycznie lub ręcznie) możesz zacząć dokumentację fotograficzną:</p>
             <ul class="list-disc ml-5 space-y-2">
-                <li><strong>Precyzyjny GPS:</strong> Na górnym pasku znajdziesz wskaźnik lokalizacji.</li>
-                <li><strong>Geotagowanie:</strong> Upewnij się, że w aparacie masz włączoną tę funkcję.</li>
+                <li><strong>Precyzyjny GPS:</strong> W każdym folderze, na górnym pasku, znajdziesz wskaźnik lokalizacji. Aplikacja na bieżąco aktualizuje współrzędne.</li>
+                <li><strong>Wymagania:</strong> Upewnij się, że w aparacie systemowym masz włączoną funkcję Geotagowania. Dzięki temu każde zdjęcie wykonane aplikacją będzie miało w metadanych idealnie przypisaną lokalizację GPS.</li>
             </ul>
+            
+            <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-600 mt-6 text-slate-400 italic text-xs">
+                💡 <strong>Wskazówka:</strong> Czekaj, aż wskaźnik lokalizacji na górze ustabilizuje się przed zrobieniem zdjęcia – daje to 100% pewności Inwestorowi co do miejsca wykonania prac.
+            </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <img src="1000095168.jpg" alt="Wybór numeru w folderze Słupy" class="rounded-xl border border-slate-600 shadow-2xl">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <img src="1000095168.jpg" alt="Wybór numeru kabla" class="rounded-xl border border-slate-600 shadow-2xl">
             <img src="1000095169.jpg" alt="Wklejanie listy numerów" class="rounded-xl border border-slate-600 shadow-2xl">
-            <img src="1000095170.jpg" alt="Wybór Mufy w folderze Moc optyczna" class="rounded-xl border border-slate-600 shadow-2xl">
+            <img src="1000095170.jpg" alt="Wybór mufy w folderze Moc Optyczna" class="rounded-xl border border-slate-600 shadow-2xl">
         </div>
     </div>
-       </section>
+</section>
+
         
 
         <section class="mt-16 text-center border-t border-slate-800 pt-10 text-slate-500">
