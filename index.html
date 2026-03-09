@@ -39,24 +39,38 @@
                 <span class="text-xl font-bold italic text-purple-500">Zdjęcia <span class="text-green-500">Inwestycje</span></span>
             </div>
 
-            <div class="hidden lg:flex items-center gap-6 text-xs uppercase tracking-widest font-bold">
-                <a href="#demo" class="hover:text-purple-400 transition">Interaktywne Demo</a>
-                <a href="#funkcje" class="hover:text-purple-400 transition">O Systemie</a>
-                <a href="#kontakt" class="hover:text-purple-400 transition">Kontakt</a>
-                <a href="LINK_DO_PDF" class="hover:text-purple-400 transition underline decoration-purple-500">Instrukcja </a>
-                <a href="LINK_DO_APP" class="bg-green-600 px-5 py-2 rounded-lg hover:bg-green-700 transition text-white shadow-lg">Pobierz Aplikację</a>
-            </div>
-            <button class="lg:hidden text-2xl" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
-        </div>
-        <div id="mobileMenu" class="mobile-menu lg:hidden bg-slate-900 border-b border-slate-800 p-6 space-y-4 text-center font-semibold text-sm">
-            <a href="#demo" onclick="toggleMenu()" class="block py-2">Interaktywne Demo</a>
-            <a href="#funkcje" onclick="toggleMenu()" class="block py-2">O Systemie</a>
-            <a href="#kontakt" onclick="toggleMenu()" class="block py-2">Kontakt</a>
-        
-            <a href="instrukcja.html" class="hover:text-purple-400 transition font-bold uppercase tracking-widest text-sm">  Instrukcja </a>
-            
-            <a href="LINK_DO_APP" onclick="toggleMenu()" class="block py-3 bg-green-600 rounded-xl text-white uppercase">Pobierz Aplikację</a>
-        </div>
+            <div class="hidden lg:flex items-center gap-8 text-xs uppercase tracking-widest font-bold">
+    <a href="#demo" class="hover:text-purple-400 transition-all duration-300">Interaktywne Demo</a>
+    <a href="#funkcje" class="hover:text-purple-400 transition-all duration-300">O Systemie</a>
+    <a href="#kontakt" class="hover:text-purple-400 transition-all duration-300">Kontakt</a>
+    
+    <a href="instrukcja.html" class="text-purple-400 hover:text-white transition-all duration-300 flex items-center gap-2">
+        <i class="fas fa-book-open"></i> Instrukcja
+    </a>
+    
+    <a href="LINK_DO_APP" class="bg-gradient-to-r from-green-600 to-emerald-600 px-6 py-2.5 rounded-xl hover:scale-105 active:scale-95 transition-all text-white shadow-[0_0_20px_rgba(22,163,74,0.3)]">
+        Pobierz Aplikację
+    </a>
+</div>
+
+<button class="lg:hidden text-2xl text-slate-300 hover:text-purple-400 transition-colors" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+</button>
+
+<div id="mobileMenu" class="mobile-menu hidden lg:hidden bg-slate-900/fb border-b border-slate-800 p-8 space-y-4 text-center font-bold text-sm uppercase tracking-wider backdrop-blur-xl">
+    <a href="#demo" onclick="toggleMenu()" class="block py-3 hover:text-purple-400 border-b border-slate-800/50">Interaktywne Demo</a>
+    <a href="#funkcje" onclick="toggleMenu()" class="block py-3 hover:text-purple-400 border-b border-slate-800/50">O Systemie</a>
+    <a href="#kontakt" onclick="toggleMenu()" class="block py-3 hover:text-purple-400 border-b border-slate-800/50">Kontakt</a>
+
+    <a href="instrukcja.html" class="block py-4 text-purple-400 hover:text-purple-300">
+        <i class="fas fa-book-open mr-2"></i> Pełna Instrukcja
+    </a>
+    
+    <a href="LINK_DO_APP" onclick="toggleMenu()" class="block py-4 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl text-white shadow-lg">
+        Pobierz Aplikację
+    </a>
+</div>
+
     </nav>
 
     <section class="pt-32 pb-8 px-4 text-center">
